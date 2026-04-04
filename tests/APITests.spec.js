@@ -2,7 +2,6 @@ const {test,expect,request} =   require('@playwright/test');
 
 // These are some API calls to the APIs just to check their responses via playwright ----------
 
-//const loginPayload = {userEmail:"gauravsharma051975@gmail.com",userPassword:"password"};
 const loginPayload = new URLSearchParams({
   email: 'test1234@yahoo.com',
   password: 'password'

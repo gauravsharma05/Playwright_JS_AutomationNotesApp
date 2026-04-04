@@ -1,8 +1,8 @@
 const {test,expect,request} =   require('@playwright/test');
 
 // This will create a Note via the API and verify its been created via the UI.
+// It will then Delete the created Note via API and verify its been deleted via the UI.
 
-//const loginPayload = {userEmail:"gauravsharma051975@gmail.com",userPassword:"password"};
 const loginPayload = new URLSearchParams({
   email: 'test1234@yahoo.com',
   password: 'password'
