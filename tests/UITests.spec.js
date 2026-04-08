@@ -34,6 +34,7 @@ await page.locator("#title").fill(noteTitle);
 await page.locator("#description").fill(description);
 await page.getByTestId("note-submit").click();
 
+await page.waitForLoadState('networkidle');
 //Verify that the new note has been created in the UI -------------
 await page.getByText(noteTitle).isVisible();
 expect(page.getByText(noteTitle)).toBeVisible();
