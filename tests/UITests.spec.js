@@ -8,11 +8,16 @@ test('UI only test', async ({browser})=>
   const description = "This is the description for the note added via Playwright";
   const email = "test1234@yahoo.com";
   const password = "password";
+  
+  await page.addLocatorHandler(
+  page.getByRole('button', { name: 'Consent' }),
+  async () => {
+    await page.getByRole('button', { name: 'Consent' }).click();
+    }
+  );
 
   await page.goto('https://practice.expandtesting.com/notes/app');
   console.log(await page.title());
-
-  await page.getByRole("button",{name:"Consent"}).click();
 
   // Login via the UI ----------------------------------------------
   await page.getByRole('link', { name: 'Login' }).click();
