@@ -26,7 +26,7 @@ const config = ({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     browserName: 'chromium',
-    headless: false,
+    headless: !!process.env.CI, // Runs headless only in CI (GitHub Actions)
   }
 });
 module.exports = config;
